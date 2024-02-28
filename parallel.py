@@ -15,7 +15,6 @@ def monte_carlo_pi(data):
         if distance <= 1:
             points_inside_circle += 1
     
-    # 根据落在单位圆内的点的比例估计π的值
     pi_estimate = 4 * points_inside_circle 
     return pi_estimate
 
@@ -34,8 +33,7 @@ if __name__ == "__main__":
             print(f"Rank 0 sent data to rank {i}")
         recv_data = chunks[0]
     else:
-        # 其他进程接收数据
-        recv_data = np.empty((10**7, 2), dtype=np.float64)  # 准备接收数据的容器
+        recv_data = np.empty((10**7, 2), dtype=np.float64)  
         comm.Recv(recv_data, source=0)
         print(f"Rank {rank} received data. Shape: {recv_data.shape}")
 

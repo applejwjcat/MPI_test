@@ -15,7 +15,7 @@ def monte_carlo_pi(data):
         if distance <= 1:
             points_inside_circle += 1
     
-    # 根据落在单位圆内的点的比例估计π的值
+    # Calculate the pi
     pi_estimate = 4 * points_inside_circle / data.shape[0]
     return pi_estimate
 

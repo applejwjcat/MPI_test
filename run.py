@@ -13,12 +13,11 @@ def monte_carlo_pi(data):
         if distance <= 1:
             points_inside_circle += 1
 
-    # 根据落在单位圆内的点的比例估计π的值
     pi_estimate = 4 * points_inside_circle
     return pi_estimate
 
 
-# @mpi.parallel(20, verbose="info", keep_script=True)
+# @mpi.parallel(144, verbose="info", keep_script=True)
 def run(
     # data1:"S", data2=None, *args, **kwargs
     data1: "S",
